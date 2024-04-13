@@ -1,5 +1,4 @@
-import Banner from "../../components/Banner";
-import ProductsGrid from "../../components/ProductsGrid";
+import { Banner, ProductsGrid } from "../../components/index";
 // import { useEffect, useState } from
 function Home() {
 	return (
