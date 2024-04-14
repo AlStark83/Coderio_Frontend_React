@@ -1,6 +1,6 @@
 const fetchUserData = async (userId, token) => {
   try {
-    const response = await fetch(`url_de_tu_api/usuarios/${userId}`, {
+    const response = await fetch(`https://fakestoreapi.com/users/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
