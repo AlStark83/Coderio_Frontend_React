@@ -1,5 +1,5 @@
 import Banner from "./Banner";
-import Button from "./Button";
+import Button from "./ButtonAddToCart";
 import Card from "./Card";
 import Header from "./Header";
 // import Footer from "./Footer";
