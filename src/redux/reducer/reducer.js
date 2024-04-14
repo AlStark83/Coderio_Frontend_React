@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import {
 	ADD_TO_CART,
 	REMOVE_FROM_CART,
@@ -5,16 +6,26 @@ import {
 } from "../actions/actions";
 
 const initialState = {
-	cartItems: [{ id: 18, price:9.85, image:"https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg", title:"MBJ Women's Solid Short Sleeve Boat Neck V " }],
+	cartItems: [],
 };
 
 const cartReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_TO_CART:
-			return {
-				...state,
-				cartItems: [...state.cartItems, action.payload],
-			};
+			const existingItemIndex = state.cartItems.findIndex(item => item.id === action.payload.id);
+      if (existingItemIndex !== -1) {
+        const updatedCartItems = [...state.cartItems];
+        updatedCartItems[existingItemIndex].quantity += 1;
+        return {
+          ...state,
+          cartItems: updatedCartItems
+        };
+      } else {
+        return {
+          ...state,
+          cartItems: [...state.cartItems, { ...action.payload, quantity: 1 }]
+        };
+      }
 		case REMOVE_FROM_CART:
 			return {
 				...state,
