@@ -1,6 +1,6 @@
 import Home from "./Home/Home"
-import Login from "./Login/Login";
+import Cart from "./Cart/Cart";
 import CheckOut from "./CheckOut/CheckOut";
 
 
-export { Home, Login, CheckOut }
+export { Home, Cart, CheckOut }
