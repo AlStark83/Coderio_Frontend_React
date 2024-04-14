@@ -56,7 +56,7 @@ function LoginForm({ isOpen, onRequestClose }) {
 					/>
 				</div>
 				{error && <div>{error}</div>}
-				<button type="submit">Iniciar Sesión</button>
+				<button type="submit">Submit</button>
 			</form>
 		</Modal>
 	);
