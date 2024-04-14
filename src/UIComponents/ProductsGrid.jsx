@@ -29,10 +29,11 @@ function ProductsGrid() {
 					return (
 						<li key={el.id} className={"producto"}>
 							<Card
-								id={el.id}
-								image={el.image}
-								title={el.title}
-								price={el.price}
+							product={el}
+								// id={el.id}
+								// image={el.image}
+								// title={el.title}
+								// price={el.price}
 							/>
 						</li>
 					);
