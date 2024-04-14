@@ -47,7 +47,7 @@ function AuthHandler() {
   return (
     <div>
       {token ? (
-        <button onClick={handleLogout}>Cerrar Sesión</button>
+        <button onClick={handleLogout}>Logout</button>
       ) : (
         <p>Debe iniciar sesión</p>
       )}
