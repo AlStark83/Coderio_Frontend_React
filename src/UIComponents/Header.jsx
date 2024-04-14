@@ -1,14 +1,12 @@
-import Logo from '../components/Logo'
-import NavBar from './NavBar'
-import Button from './Button'
+import Logo from "../components/Logo";
+import NavBar from "./NavBar";
 function Header() {
-  return (
-    <>
-    <Logo/>
-    <NavBar/>
-    <Button/>
-    </>
-  )
+	return (
+		<>
+			<Logo />
+			<NavBar />
+		</>
+	);
 }
 
-export default Header
+export default Header;
