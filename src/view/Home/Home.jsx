@@ -1,4 +1,4 @@
-import { Banner, ProductsGrid } from "../../components/index";
+import { Banner, ProductsGrid } from "../../UIComponents/index";
 // import { useEffect, useState } from
 function Home() {
 	return (
