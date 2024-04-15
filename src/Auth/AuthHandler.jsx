@@ -1,6 +1,4 @@
-// AuthHandler.js
-
-import  { useState, useEffect } from "react";
+import  { useState, useEffect, useCallback } from "react";
 
 function AuthHandler() {
   const [token, setToken] = useState(null);
@@ -18,7 +16,7 @@ function AuthHandler() {
     window.location.reload();
   };
 
-  const fetchUserData = async (userId) => {
+  const fetchUserData = useCallback(async (userId) => {
     try {
       const response = await fetch(`https://fakestoreapi.com/users/${userId}`, {
         headers: {
@@ -35,14 +33,13 @@ function AuthHandler() {
     } catch (error) {
       console.error("Error:", error.message);
     }
-  };
+  }, [token]);
 
   useEffect(() => {
     if (token) {
       fetchUserData();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [token]);
+  }, [token, fetchUserData]);
 
   return (
     <div>
