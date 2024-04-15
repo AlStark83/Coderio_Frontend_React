@@ -1,8 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./UIComponents/Header";
-import ModalLoginForm from "./Auth/ModalLoginForm";
-import AuthHandler from "./Auth/AuthHandler";
 import { Home, Cart, CheckOut  } from "./view/index";
 
 
@@ -11,9 +9,6 @@ function App() {
 		<Router>
 			<>
 				<Header />
-
-				<ModalLoginForm />
-				<AuthHandler />
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/cart" element={<Cart />} />
