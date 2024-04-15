@@ -21,7 +21,7 @@ function Cart({ cartItems, removeFromCart, updateQuantity }) {
   <h4 className="text-lg font-semibold text-white">Subtotal: ${total}</h4>
   <Link  className="text-white px-4 py-2 text-sm font-medium transition-all hover:text-gray-200 hover:font-semibold hover:text-lg"to={"cart"}>Cart</Link>
   {cartItems.length === 0 ? (
-    <p>Your cart is empty.</p>
+    <p  className="text-white">Your cart is empty.</p>
   ) : (
     <ul className="flex flex-col items-center w-32">
       {cartItems.map((item) => (
