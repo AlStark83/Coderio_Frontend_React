@@ -49,7 +49,7 @@ function AuthHandler() {
       {token ? (
         <button className="p-2 bg-gray-600 text-white rounded ml-4" onClick={handleLogout}>Logout</button>
       ) : (
-        <p className="text-sm hidden md:block">Debe iniciar sesión</p>
+        <p className="text-sm hidden md:block">You must loggin</p>
       )}
     </div>
   );
