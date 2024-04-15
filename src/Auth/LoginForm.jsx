@@ -42,31 +42,33 @@ function LoginForm({ isOpen, onRequestClose }) {
 	};
 	
 	return (
-		<Modal isOpen={isOpen} onRequestClose={onRequestClose}>
-			<h2>Login</h2>
-			<form onSubmit={handleSubmit}>
-				<div>
-					<label htmlFor="username">Usuario:</label>
-					<input
-						type="text"
-						id="username"
-						value={username}
-						onChange={(e) => setUsername(e.target.value)}
-					/>
-				</div>
-				<div>
-					<label htmlFor="password">Contraseña:</label>
-					<input
-						type="password"
-						id="password"
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-					/>
-				</div>
-				{error && <div>{error}</div>}
-				<button type="submit">Submit</button>
-			</form>
-		</Modal>
+<Modal isOpen={isOpen} onRequestClose={onRequestClose} className="bg-white rounded-lg p-8 shadow-md w-96">
+  <h2 className="text-2xl font-bold mb-4">Login</h2>
+  <form onSubmit={handleSubmit}>
+    <div className="mb-4">
+      <label htmlFor="username" className="block text-sm font-semibold">User:</label>
+      <input
+        type="text"
+        id="username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+      />
+    </div>
+    <div className="mb-4">
+      <label htmlFor="password" className="block text-sm font-semibold">Password:</label>
+      <input
+        type="password"
+        id="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+      />
+    </div>
+    {error && <div className="text-red-500 mb-4">{error}</div>}
+    <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
+  </form>
+</Modal>
 	);
 }
 
