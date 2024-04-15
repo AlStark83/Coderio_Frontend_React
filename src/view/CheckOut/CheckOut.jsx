@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line react/prop-types
-import CartConnected from "../Cart/Cart";
+import CheckOutCartConnected from "../../UIComponents/CheckOutCart";
 import { useState } from "react";
 
 function CheckOut({ cartItems }) {
@@ -47,10 +47,11 @@ function CheckOut({ cartItems }) {
       console.log('Valid form, submitted:', formData);
     }
   };
-
-
+  
+  
   return (
     <div className="max-w-md mx-auto px-4">
+      <CheckOutCartConnected cartItems={cartItems} />
 
       <form onSubmit={handleSubmit} className="mt-8">
         <label className="block mb-4">
@@ -115,7 +116,6 @@ function CheckOut({ cartItems }) {
         </label>
         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Pay</button>
       </form>
-      <CartConnected cartItems={cartItems} />
 
     </div>
   );
