@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line react/prop-types
+import PropTypes from 'prop-types';
 import CheckOutCartConnected from "../../UIComponents/CheckOutCart";
 import { useState } from "react";
 
@@ -122,4 +121,7 @@ function CheckOut({ cartItems }) {
 
 }
 
+CheckOut.propTypes = {
+  cartItems: PropTypes.array.isRequired
+};
 export default CheckOut;

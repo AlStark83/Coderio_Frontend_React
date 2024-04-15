@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import ButtonAddToCartConnected from "./ButtonAddToCart";
 
 function Card({ product }) {
@@ -13,5 +13,9 @@ function Card({ product }) {
 		</>
 	);
 }
+Card.propTypes = {
+  product: PropTypes.object.isRequired,
+  
+};
 
 export default Card;

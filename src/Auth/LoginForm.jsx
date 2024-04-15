@@ -1,7 +1,7 @@
+import PropTypes from 'prop-types';
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
 
-// eslint-disable-next-line react/prop-types
 function LoginForm({ isOpen, onRequestClose }) {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
@@ -71,5 +71,10 @@ function LoginForm({ isOpen, onRequestClose }) {
 </Modal>
 	);
 }
+
+LoginForm.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onRequestClose: PropTypes.func.isRequired,
+};
 
 export default LoginForm;

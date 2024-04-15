@@ -1,5 +1,4 @@
-/* eslint-disable react-refresh/only-export-components */
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {
@@ -8,7 +7,6 @@ import {
 	updateQuantity,
 } from "../redux/actions/actions";
 
-// eslint-disable-next-line react/prop-types
 function Cart({ cartItems, removeFromCart, updateQuantity }) {
 	const total = cartItems.reduce(
 		(acc, item) => acc + item.quantity * item.price,
@@ -51,7 +49,11 @@ function Cart({ cartItems, removeFromCart, updateQuantity }) {
 
 	);
 }
-
+Cart.propTypes = {
+  cartItems: PropTypes.array.isRequired,
+  removeFromCart: PropTypes.func.isRequired,
+  updateQuantity: PropTypes.func.isRequired
+};
 const mapStateToProps = (state) => {
 	return {
 		cartItems: state.cart.cartItems,

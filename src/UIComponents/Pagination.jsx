@@ -1,7 +1,5 @@
+import PropTypes from 'prop-types';
 
-
-
-// eslint-disable-next-line react/prop-types
 function Pagination({ productsPerPage, allProducts, pagination }) {
 
 	const pageNumbers = [];
@@ -28,4 +26,9 @@ function Pagination({ productsPerPage, allProducts, pagination }) {
 	);
 	
 }
+Pagination.propTypes = {
+  productsPerPage: PropTypes.number.isRequired,
+  allProducts: PropTypes.array.isRequired,
+  pagination: PropTypes.func.isRequired
+};
 export default Pagination;

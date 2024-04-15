@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { useState } from "react";
 import { connect } from "react-redux";
 import { addToCart } from "../redux/actions/actions";
@@ -19,6 +19,11 @@ const ButtonAddToCart = ({ product, addToCart }) => {
 			{feedbackMessage && <p>{feedbackMessage}</p>}
 		</>
 	);
+};
+
+ButtonAddToCart.propTypes = {
+  product: PropTypes.object.isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = {
