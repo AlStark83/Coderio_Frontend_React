@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "react-modal";
 
 // eslint-disable-next-line react/prop-types
@@ -7,8 +7,17 @@ function LoginForm({ isOpen, onRequestClose }) {
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState(null);
 
+	useEffect(() => {
+    const storedUsername = localStorage.getItem("username");
+   console.log("Stored Username", storedUsername);
+		if (storedUsername) {
+      setUsername(storedUsername);
+    }
+  }, []);
+
 	const handleSubmit = async (event) => {
 		event.preventDefault();
+		localStorage.setItem("username", username);
 
 		try {
 			const response = await fetch("https://fakestoreapi.com/auth/login", {
@@ -24,15 +33,14 @@ function LoginForm({ isOpen, onRequestClose }) {
 			}
 			
 			const data = await response.json();
-				
+				console.log(username);
 			localStorage.setItem("token", data.token);
-			localStorage.setItem("username", data.username);
 			onRequestClose();
 		} catch (error) {
 			setError(error.message);
 		}
 	};
-
+	
 	return (
 		<Modal isOpen={isOpen} onRequestClose={onRequestClose}>
 			<h2>Login</h2>
