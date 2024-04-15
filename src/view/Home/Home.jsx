@@ -1,13 +1,15 @@
 import { Banner, ProductsGrid } from "../../UIComponents/index";
-import  Cart  from "../Cart/Cart";
+import  SideCart  from "../../UIComponents/SideCart";
 // import { useEffect, useState } from
 function Home() {
 	return (
 		<>
 			<Banner />
-			<h1>Home</h1>
+			{/* <h1>Home</h1> */}
+			<div className="align-center">
 			<ProductsGrid />
-			<Cart/>
+			</div>
+			<SideCart/>
 		</>
 	);
 }

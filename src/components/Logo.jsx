@@ -1,7 +1,9 @@
 
 function Logo() {
   return (
-    <div>Logo</div>
+    <div className="flex-shrink-0 hidden md:block">
+    Logo
+    </div>
   )
 }
 

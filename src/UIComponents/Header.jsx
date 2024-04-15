@@ -1,10 +1,16 @@
 import Logo from "../components/Logo";
 import NavBar from "./NavBar";
+import ModalLoginForm from "../Auth/ModalLoginForm";
+import AuthHandler from "../Auth/AuthHandler";
 function Header() {
 	return (
 		<>
-			<Logo />
-			<NavBar />
+			<div className="fixed top-0 w-full bg-gray-800 text-white p-4 flex justify-between items-center h-16">
+				<Logo />
+				<NavBar />
+				<ModalLoginForm />
+				<AuthHandler />
+			</div>
 		</>
 	);
 }

@@ -31,11 +31,13 @@ function ModalLoginForm() {
 		<div>
 			{!token ? (
 				<>
-					<button onClick={openModal}>{loginButtonText()}</button>
-					<LoginForm isOpen={modalIsOpen} onRequestClose={closeModal} />
+					<div>
+						<button className="p-2 bg-gray-600 text-white rounded" onClick={openModal}>{loginButtonText()}</button>
+						<LoginForm isOpen={modalIsOpen} onRequestClose={closeModal} />
+					</div>
 				</>
 			) : (
-				<p>Good to have you back</p>
+				<p className="text-sm hidden md:block">Good to have you back</p>
 			)}
 		</div>
 	);

@@ -11,14 +11,21 @@ function Pagination({ productsPerPage, allProducts, pagination }) {
 	}
 
 	return (
-		<nav >
-			<div  className="paginado">
+		<nav className="flex justify-center mt-8">
+			<div className="pagination">
 				{pageNumbers &&
 					pageNumbers.map((number) => (
-							<button key={number} className="button" onClick={() => pagination(number)}>{number}</button>
+						<button
+							key={number}
+							className="mb-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-1 focus:outline-none focus:shadow-outline"
+							onClick={() => pagination(number)}
+						>
+							{number}
+						</button>
 					))}
 			</div>
 		</nav>
 	);
+	
 }
 export default Pagination;

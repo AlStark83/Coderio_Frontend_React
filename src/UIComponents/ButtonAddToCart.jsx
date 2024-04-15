@@ -15,7 +15,7 @@ const ButtonAddToCart = ({ product, addToCart }) => {
 	};
 	return (
 		<>
-			<button onClick={handleAddToCart}>Add to Cart</button>
+			<button className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-4 rounded ml-7" onClick={handleAddToCart}>Add to Cart</button>
 			{feedbackMessage && <p>{feedbackMessage}</p>}
 		</>
 	);
