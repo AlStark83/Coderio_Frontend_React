@@ -4,7 +4,7 @@ import Card from "./Card";
 import Header from "./Header";
 // import Footer from "./Footer";
 import Loader from "./Loader";
-import Logo from "../components/Logo";
+import Logo from "./Logo";
 import NavBar from "./NavBar";
 import Pagination from "./Pagination";
 import ProductsGrid from "./ProductsGrid";

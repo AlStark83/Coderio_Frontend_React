@@ -1,4 +1,4 @@
-import Logo from "../components/Logo";
+import Logo from "../UIComponents/Logo";
 import NavBar from "./NavBar";
 import ModalLoginForm from "../Auth/ModalLoginForm";
 import AuthHandler from "../Auth/AuthHandler";
