@@ -38,13 +38,16 @@ function Cart({ cartItems, removeFromCart, updateQuantity }) {
 										<input
 											type="number"
 											value={item.quantity}
-											onChange={(e) =>
-												updateQuantity(item.id, parseInt(e.target.value))
-											}
+											onChange={(e) => {
+												const newValue = parseInt(e.target.value);
+												if (newValue >= 0) {
+													updateQuantity(item.id, newValue);
+												}
+											}}
 											className="ml-2"
 										/>
 									</p>
-									<p className="mb-1">Subtotal: ${item.quantity * item.price}</p>
+									<p className="mb-1">Subtotal: ${(item.quantity.toFixed(2) * item.price.toFixed(2)).toFixed(2)} USD</p>
 									<button
 										onClick={() => removeFromCart(item.id)}
 										className="mt-2 px-4 py-2 bg-red-500 text-white rounded"
@@ -57,7 +60,7 @@ function Cart({ cartItems, removeFromCart, updateQuantity }) {
 					))}
 				</ul>
 			)}
-			<h4 className="text-right text-xl font-bold mt-4">Total: ${total}</h4>
+			<h4 className="text-right text-xl font-bold mt-4">Total: ${total.toFixed(2)} USD</h4>
 			<Link
 				to="/checkout"
 				className="mb-8 block text-center bg-blue-500 text-white px-4 py-2 rounded mt-4 text-xl"
