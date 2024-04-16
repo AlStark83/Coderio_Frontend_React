@@ -8,15 +8,15 @@ const ButtonAddToCart = ({ product, addToCart }) => {
 
 	const handleAddToCart = () => {
 		addToCart(product);
-		setFeedbackMessage(`${product.title} has been added to your cart.`);
+		setFeedbackMessage(`Added to cart.`);
 		setTimeout(() => {
 			setFeedbackMessage("");
-		}, 3000);
+		}, 2500);
 	};
 	return (
 		<>
+			{feedbackMessage && <p className='font-bold text-green-900 my-4 ml-7 '>{feedbackMessage}</p>}
 			<button className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-4 rounded ml-7" onClick={handleAddToCart}>Add to Cart</button>
-			{feedbackMessage && <p>{feedbackMessage}</p>}
 		</>
 	);
 };
