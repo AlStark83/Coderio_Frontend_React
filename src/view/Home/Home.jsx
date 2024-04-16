@@ -5,9 +5,7 @@ function Home() {
 	return (
 		<>
 			<Banner />
-			<div className="align-center">
 			<ProductsGrid />
-			</div>
 			<SideCart/>
 		</>
 	);
