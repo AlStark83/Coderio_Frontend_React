@@ -6,7 +6,7 @@ import { Home, Cart, CheckOut  } from "./view/index";
 
 function App() {
 	return (
-		<Router>
+		<Router basename="/CoderioEcomm">
 			<>
 				<Header />
 				<Routes>
