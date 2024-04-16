@@ -40,7 +40,7 @@ function Cart({ cartItems, removeFromCart, updateQuantity }) {
 											value={item.quantity}
 											onChange={(e) => {
 												const newValue = parseInt(e.target.value);
-												if (newValue > 0) {
+												if (newValue > -1) {
 													updateQuantity(item.id, newValue);
 												}
 											}}
