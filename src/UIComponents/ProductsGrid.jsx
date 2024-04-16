@@ -19,11 +19,11 @@ function ProductsGrid() {
 	}, []);
 	return (
 		<>
-			<div className="w-full md:w-calc(100vw - 128) px-12 pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
+			<div className="w-full md:w-calc(100vw - 128) md:pr-28 pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
 				{currentProducts &&
 					currentProducts.map((el) => {
 						return (
-							<li key={el.id} className="w-full md:w-1/2 lg:w-1/4 list-none">
+							<li key={el.id} className="w-full  md:w-calc(100vw - 128) list-none flex justify-center ">
 								<Card
 									product={el}
 								/>
