@@ -7,7 +7,7 @@ import {
 } from "../redux/actions/actions";
 
 
-function CheckOutCart({ cartItems, updateQuantity }) {
+function CheckOutCart({ cartItems }) {
 	const total = cartItems.reduce(
 		(acc, item) => acc + item.quantity * item.price,
 		0
@@ -29,25 +29,11 @@ function CheckOutCart({ cartItems, updateQuantity }) {
 								/>
 								<div>
 									<h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-									{/* <p className="mb-1">Price: ${item.price}</p> */}
+
 									<p className="mb-1">
 										Quantity:
-										<input
-											type="number"
-											value={item.quantity}
-											onChange={(e) =>
-												updateQuantity(item.id, parseInt(e.target.value))
-											}
-											className="ml-2"
-										/>
+										<p className="">{item.quantity}</p>
 									</p>
-									{/* <p className="mb-1">Subtotal: ${item.quantity * item.price}</p> */}
-									{/* <button
-										onClick={() => removeFromCart(item.id)}
-										className="mt-2 px-4 py-2 bg-red-500 text-white rounded"
-									>
-										Remove
-									</button> */}
 								</div>
 							</div>
 						</li>
